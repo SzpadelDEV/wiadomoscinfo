@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centrum Wiadomości </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Polskie Centrum <span class="highlight">Wiadomosci</span></h1>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="toggle-ball"></div>
+            </div>
+        </header>
+        
+        
+
+        <nav>
+            <ul>
+                <li data-source="polsat" class="active">
+                    <img src="images/polsat.png" alt="Polsat News" class="source-logo">
+                    <span>Polsat News</span>
+                </li>
+                <li data-source="pap">
+                    <img src="images/pap.png" alt="Polska Agencja Prasowa" class="source-logo">
+                    <span>Polska Agencja Prasowa</span>
+                </li>
+                <li data-source="tvn24">
+                    <img src="images/tvn24.png" alt="TVN24" class="source-logo">
+                    <span>TVN24</span>
+                </li>
+                <li data-source="rzeczpospolita">
+                    <img src="images/rp.png" alt="Rzeczpospolita" class="source-logo">
+                    <span>Rzeczpospolita</span>
+                </li>
+                <li data-source="fakt">
+                    <img src="images/fakt.png" alt="Fakt" class="source-logo">
+                    <span>Fakt</span>
+                </li>
+                <li data-source="polityka">
+                    <img src="images/polityka.png" alt="polityka" class="source-logo">
+                    <span>Polityka</span>
+                </li>
+                <li class="foreign-media"><img src="images/usa.jpg" class="source-logo">Zagraniczne</li>
+            </ul>
+        </nav>
+        
+        
+        <main>
+            <div class="loader">
+                <div class="spinner"></div>
+            </div>
+            <div class="feed-container">
+                <!-- Feed items will be inserted here -->
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Polish News Aggregator | <a href="https://github.com/SzpadelDEV" target="_blank"><i class="fab fa-github"></i> Open Source Project</a></p>
+        </footer>
+          
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
