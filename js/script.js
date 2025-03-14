@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <h3 class="feed-item-title">${item.title}</h3>
               <div class="feed-item-date"><i class="far fa-clock"></i> ${new Date(item.pubDate).toLocaleDateString()}</div>
               <p class="feed-item-description">${item.description.substring(0, 150)}...</p>
-              <a href="${item.link}" target="_blank" class="feed-item-link">Read More</a>
+              <a href="${item.link}" target="_blank" class="feed-item-link">Przeczytaj Więcej</a>
             </div>
           `;
           
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
                           <h3 class="feed-item-title">${title}</h3>
                           <div class="feed-item-date"><i class="far fa-clock"></i> ${formatDate(pubDate)}</div>
                           <p class="feed-item-description">${stripHtml(description).substring(0, 150)}...</p>
-                          <a href="${link}" target="_blank" class="feed-item-link">Read More</a>
+                          <a href="${link}" target="_blank" class="feed-item-link">Przeczytaj Więcej</a>
                       </div>
                   `;
                   
