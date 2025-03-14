@@ -4,21 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
   
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
-      // Remove active class from all tabs
+      
       tabs.forEach(t => t.classList.remove('active'));
       
-      // Add active class to clicked tab
+    
       this.classList.add('active');
       
-      // Show loader while fetching content
+    
       feedContainer.innerHTML = '<div class="loader"><div class="spinner"></div></div>';
       
-      // If Foreign Media tab is clicked
+      
       if (this.classList.contains('foreign-media')) {
         loadForeignMediaFeeds();
       } else {
-        // Load other feeds based on the selected tab
-        // Your existing code for other tabs
+      
       }
     });
   });
@@ -30,8 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       { source: 'Politico', url: 'https://rss.politico.com/politics-news.xml', logo: 'images/politico.jpg' }
     ];
     
-    // Use a RSS to JSON API service to fetch the feeds
-    // Example using rss2json.com API
+ 
     Promise.all(rssFeeds.map(feed => 
       fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`)
         .then(response => response.json())
@@ -81,19 +79,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Theme toggling
+  
   const themeToggle = document.querySelector('.theme-toggle');
   themeToggle.addEventListener('click', function() {
       document.body.classList.toggle('dark-theme');
       localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
   });
 
-  // Check for saved theme preference
+  
   if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-theme');
   }
 
-  // Navigation tabs
+  
   const navItems = document.querySelectorAll('nav ul li');
   navItems.forEach(item => {
       item.addEventListener('click', function() {
@@ -114,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tvp: 'https://media2.pl/rss/tag/tvp-info.xml'
   };
 
-  // Function to fetch and display feeds using a proxy
+
   function fetchFeed(source) {
       const feedContainer = document.querySelector('.feed-container');
       const loader = document.querySelector('.loader');
@@ -122,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
       feedContainer.innerHTML = '';
       loader.style.display = 'flex';
       
-      // Using a CORS proxy to fetch the RSS feed
+      
       const proxyUrl = 'https://api.allorigins.win/raw?url=';
       const feedUrl = encodeURIComponent(feedUrls[source]);
       
@@ -141,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   const description = item.querySelector('description')?.textContent || 'No Description';
                   const pubDate = item.querySelector('pubDate')?.textContent || 'Unknown Date';
                   
-                  // Extract image from description if available
+                  
                   let imageUrl = '';
                   if (description.includes('<img')) {
                       const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
@@ -150,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       }
                   }
                   
-                  // Create feed item element
+                 
                   const feedItem = document.createElement('div');
                   feedItem.className = 'feed-item';
                   
@@ -178,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
           });
   }
   
-  // Helper function to format date
+  
   function formatDate(dateString) {
       try {
           const date = new Date(dateString);
@@ -194,13 +192,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
   
-  // Helper function to strip HTML tags
+  
   function stripHtml(html) {
       const temp = document.createElement('div');
       temp.innerHTML = html;
       return temp.textContent || temp.innerText || '';
   }
   
-  // Fetch default feed (Polsat News)
+  
   fetchFeed('polsat');
 });
