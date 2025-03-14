@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
+  // LINKS TO RSS MEDIA
   function loadForeignMediaFeeds() {
     const rssFeeds = [
       { source: 'CNN', url: 'https://moxie.cnn.com/google-publisher/latest.xml', logo: 'images/cnn.png' },
